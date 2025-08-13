@@ -30,6 +30,7 @@ body {
   backdrop-filter: blur(6px);
   z-index: 50;
   border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-top: calc(16px + env(safe-area-inset-top));
 }
 
 .brand {
@@ -131,3 +132,39 @@ img.thumb.fallback { filter: saturate(0.6) brightness(0.8); }
 
 /* Utility */
 .hidden { display: none !important; }
+
+@media (max-width: 720px) {
+  .site-header {
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .controls {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .search input[type="search"] {
+    width: 100%;
+  }
+  .sort {
+    justify-content: space-between;
+  }
+  .container {
+    width: 94vw;
+    margin: 14px auto 28px auto;
+  }
+  .video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .video-grid.compact {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .player-actions {
+    flex-wrap: wrap;
+  }
+}
