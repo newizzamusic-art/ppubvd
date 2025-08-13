@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHubish - Video</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand" onclick="window.location.href='/'">
+        <span class="brand-prefix">P</span><span class="brand-box">Hub</span><span class="brand-suffix">ish</span>
+      </div>
+      <div class="controls">
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="Cari judul video..." autocomplete="off" />
+        </div>
+        <div class="sort">
+          <label for="sortSelect">Urutkan</label>
+          <select id="sortSelect">
+            <option value="relevance">Relevansi</option>
+            <option value="title_asc">Judul A-Z</option>
+            <option value="title_desc">Judul Z-A</option>
+            <option value="duration_desc">Durasi Terlama</option>
+            <option value="duration_asc">Durasi Terpendek</option>
+            <option value="size_desc">Ukuran Terbesar</option>
+            <option value="size_asc">Ukuran Terkecil</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="videoStats" class="stats"></div>
+      <div id="videoGrid" class="video-grid" aria-live="polite"></div>
+      <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+    </main>
+
+    <template id="videoCardTemplate">
+      <article class="video-card">
+        <a class="thumb-wrap" href="#">
+          <img class="thumb lazy" alt="" loading="lazy" />
+          <span class="badge duration"></span>
+          <span class="badge resolution"></span>
+        </a>
+        <a class="title" href="#"></a>
+        <div class="meta">
+          <span class="meta-item length"></span>
+          <span class="dot">•</span>
+          <span class="meta-item size"></span>
+        </div>
+      </article>
+    </template>
+
+    <script src="/assets/utils.js"></script>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>

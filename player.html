@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHubish - Player</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body class="player-page">
+    <header class="site-header">
+      <div class="brand" onclick="window.location.href='/'">
+        <span class="brand-prefix">P</span><span class="brand-box">Hub</span><span class="brand-suffix">ish</span>
+      </div>
+      <div class="controls">
+        <a class="back-link" href="/">← Kembali</a>
+      </div>
+    </header>
+
+    <main class="container player-layout">
+      <section class="player-main">
+        <h1 id="videoTitle" class="player-title"></h1>
+        <video id="videoEl" class="player" controls preload="metadata" playsinline></video>
+        <div class="player-actions">
+          <a id="downloadBtn" class="btn primary" href="#" download>Unduh</a>
+          <a id="openSourceBtn" class="btn" href="#" target="_blank" rel="noopener">Buka Sumber</a>
+        </div>
+        <div id="videoMeta" class="player-meta"></div>
+      </section>
+
+      <aside class="player-recommendations">
+        <h2 class="section-title">Rekomendasi</h2>
+        <div id="recGrid" class="video-grid compact"></div>
+      </aside>
+    </main>
+
+    <template id="recCardTemplate">
+      <article class="video-card compact">
+        <a class="thumb-wrap" href="#">
+          <img class="thumb lazy" alt="" loading="lazy" />
+          <span class="badge duration"></span>
+          <span class="badge resolution"></span>
+        </a>
+        <a class="title" href="#"></a>
+        <div class="meta">
+          <span class="meta-item length"></span>
+          <span class="dot">•</span>
+          <span class="meta-item size"></span>
+        </div>
+      </article>
+    </template>
+
+    <script src="/assets/utils.js"></script>
+    <script src="/assets/player.js"></script>
+  </body>
+</html>
